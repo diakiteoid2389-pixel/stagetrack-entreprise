@@ -44,17 +44,34 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';   // ← Ajout de l'import pour Login
 import EntrepriseDashboard from './pages/EntrepriseDashboard';
+import Publication from './pages/Publication';
+import Candidatures from './pages/Candidatures';
+import Stagiaires from './pages/Stagiaires';
+import Analyse from './pages/Analyse';
+import Notifications from './pages/Notifications';
+import Parametres from './pages/Parametres';
+import Profil from './pages/Profil';
+import Service from './pages/Service';
+import Contact from './pages/Contact';
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <Routes>
         <Route path="/"          element={<Home />} />
-        <Route path="/login"     element={<Login />} />   {/* ← Nouvelle route */}
-        <Route path="/dashboard" element={<EntrepriseDashboard />} />   {/* ← Dashboard entreprise */}
+        <Route path="/login"     element={<Login />} />   {/* ← Route de connexion */}
         
-        {/* Routes futures possibles (exemples) */}
-        {/* <Route path="/register" element={<Register />} /> */}
+        {/* Routes Entreprise */}
+        <Route path="/dashboard"              element={<EntrepriseDashboard />} />
+        <Route path="/dashboard/publication"  element={<Publication />} />
+        <Route path="/dashboard/candidatures" element={<Candidatures />} />
+        <Route path="/dashboard/stagiaires"   element={<Stagiaires />} />
+        <Route path="/dashboard/analyse"      element={<Analyse />} />
+        <Route path="/dashboard/notifications" element={<Notifications />} />
+        <Route path="/dashboard/parametres"   element={<Parametres />} />
+        <Route path="/dashboard/profil"       element={<Profil />} />
+        <Route path="/dashboard/service"      element={<Service />} />
+        <Route path="/dashboard/contact"      element={<Contact />} />
         
         {/* Route 404 optionnelle (à la fin) */}
         <Route path="*" element={<div className="flex-grow flex items-center justify-center text-2xl text-gray-600">Page non trouvée (404)</div>} />

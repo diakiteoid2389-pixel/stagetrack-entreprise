@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Plus, Users, Briefcase, Clock, CheckCircle, AlertCircle, Edit2, Trash2, Eye } from 'lucide-react';
-import Header from '../components/Header';
+import HeaderEntreprise from '../components/HeaderEntreprise';
+import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 
 export default function EntrepriseDashboard() {
@@ -83,9 +84,10 @@ export default function EntrepriseDashboard() {
 
   return (
     <>
-      <Header />
+      <HeaderEntreprise />
+      <Sidebar />
 
-      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-24">
+      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-24 md:ml-64">
         <div className="container mx-auto px-6 max-w-7xl">
           {/* En-tête avec titre et bouton d'ajout */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
