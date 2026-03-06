@@ -37,16 +37,27 @@
 
 
 
+// src/App.jsx (ou src/App.js)
 import { Routes, Route } from 'react-router-dom';
+
+// Import des pages
 import Home from './pages/Home';
-import LoginForm from './components/LoginForm';
+import Login from './pages/Login';   // ← Ajout de l'import pour Login
+import EntrepriseDashboard from './pages/EntrepriseDashboard';
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/LoginForm" element={<LoginForm />} />
+        <Route path="/"          element={<Home />} />
+        <Route path="/login"     element={<Login />} />   {/* ← Nouvelle route */}
+        <Route path="/dashboard" element={<EntrepriseDashboard />} />   {/* ← Dashboard entreprise */}
+        
+        {/* Routes futures possibles (exemples) */}
+        {/* <Route path="/register" element={<Register />} /> */}
+        
+        {/* Route 404 optionnelle (à la fin) */}
+        <Route path="*" element={<div className="flex-grow flex items-center justify-center text-2xl text-gray-600">Page non trouvée (404)</div>} />
       </Routes>
     </div>
   );

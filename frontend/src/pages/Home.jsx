@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -8,12 +7,6 @@ const heroBg = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?aut
 const featureImg1 = 'https://images.unsplash.com/photo-1522202176988-66273c2b033f?auto=format&fit=crop&q=80'; // collaboration
 
 function Home() {
-  const navigate = useNavigate();
-
-  const handleStart = () => {
-    navigate('/LoginForm');
-  };
-
   return (
     <>
       <Header />
@@ -38,9 +31,9 @@ function Home() {
             StageTrack connecte étudiants talentueux, universités engagées et entreprises innovantes pour des expériences professionnelles qui comptent.
           </p>
 
-          {/* Bouton principal – moderne avec gradient + hover animation */}
+          {/* Bouton principal – style conservé mais sans action de navigation */}
           <button
-            onClick={handleStart}
+            type="button"
             className={`
               group relative inline-flex items-center justify-center 
               px-10 py-5 text-lg font-bold tracking-wide 
@@ -49,10 +42,10 @@ function Home() {
               transition-all duration-300 ease-out
               hover:scale-105 hover:shadow-indigo-600/50 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700
               focus:outline-none focus:ring-4 focus:ring-indigo-400/50
-              overflow-hidden
+              overflow-hidden cursor-default
             `}
           >
-            <span className="relative z-10">Commencer maintenant</span>
+            <span className="relative z-10">Découvrir la plateforme</span>
             <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             <span className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 blur-xl group-hover:opacity-40 transition-opacity duration-500"></span>
           </button>
@@ -122,7 +115,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Section confiance / stats (optionnelle mais impactante) */}
+      {/* Section confiance / stats */}
       <section className="py-16 bg-indigo-50">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gray-800">
@@ -156,10 +149,10 @@ function Home() {
           </p>
 
           <button
-            onClick={handleStart}
-            className="inline-flex items-center px-12 py-6 text-xl font-bold bg-white text-indigo-700 rounded-full shadow-2xl hover:bg-gray-100 transform hover:scale-105 transition-all duration-300"
+            type="button"
+            className="inline-flex items-center px-12 py-6 text-xl font-bold bg-white text-indigo-700 rounded-full shadow-2xl hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 cursor-default"
           >
-            Commencer gratuitement →
+            En savoir plus →
           </button>
         </div>
       </section>
